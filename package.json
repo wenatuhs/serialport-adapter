@@ -1,0 +1,20 @@
+{
+  "name": "serialport-adapter",
+  "version": "1.0.0",
+  "description": "Adapter that communicates with the serial devices",
+  "main": "index.js",
+  "bin": {
+    "spadapter": "./index.js"
+  },
+  "scripts": {
+    "dist": "pkg -t node9-win,node9-macos . --out-path ./dist"
+  },
+  "keywords": [
+    "serialport"
+  ],
+  "author": "wenatuhs <wenatuhs@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "serialport": "^6.2.0"
+  }
+}
