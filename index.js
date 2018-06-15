@@ -26,7 +26,7 @@ if (TEST) {
 }
 
 try {
-  console.log(typeof BAUD_RATE, BAUD_RATE)
+  // console.log(typeof BAUD_RATE, BAUD_RATE)
   const port = new SerialPort(PORT_PATH, {
     baudRate: BAUD_RATE
   })
