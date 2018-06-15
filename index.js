@@ -1,6 +1,15 @@
-const PORT_PATH = process.env.PORT_PATH || '/dev/test'
-const BAUD_RATE = process.env.BAUD_RATE || 57600
 const TEST = process.env.TEST
+const PORT_PATH = process.env.PORT_PATH || '/dev/test'
+
+let BAUD_RATE
+try {
+  BAUD_RATE = parseInt(process.env.BAUD_RATE)
+} catch (err) {
+  // Do nothing
+}
+if (!BAUD_RATE) {
+  BAUD_RATE = 9600
+}
 
 let SerialPort, MockBinding
 
@@ -17,6 +26,7 @@ if (TEST) {
 }
 
 try {
+  console.log(typeof BAUD_RATE, BAUD_RATE)
   const port = new SerialPort(PORT_PATH, {
     baudRate: BAUD_RATE
   })
